@@ -5,8 +5,8 @@ homepage: https://github.com/drigler/viva_wallet_pos
 
 
 environment:
-  sdk: ">=2.17.6 <4.0.0"
-  flutter: ">=2.5.0"
+  sdk: ">=3.10.0 <4.0.0"
+  flutter: ">=3.38.0"
 
 dependencies:
   flutter:
