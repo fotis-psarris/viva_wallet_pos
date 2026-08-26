@@ -253,6 +253,7 @@ class TransactionResponse extends BaseResponse {
   String? isvClientSecret;
   String? isvMerchantId;
   int? currency;
+  String? aadeTransactionId;
   String? fiscalisationSigningDetails;
   TransactionResponse({
     required status,
@@ -278,6 +279,7 @@ class TransactionResponse extends BaseResponse {
     this.isvClientSecret,
     this.isvMerchantId,
     this.currency,
+    this.aadeTransactionId,
     this.fiscalisationSigningDetails,
   }) : super(status: status, message: message, rawData: rawData);
 
@@ -325,6 +327,7 @@ class TransactionResponse extends BaseResponse {
       isvClientSecret: uri.queryParameters['ISV_clientSecret'],
       isvMerchantId: uri.queryParameters['ISV_merchantId'],
       currency: int.tryParse(uri.queryParameters['currency'] ?? ''),
+      aadeTransactionId: uri.queryParameters['aadeTransactionId'] ?? '',
       fiscalisationSigningDetails:
           extractParam('fiscalisationSigningDetails') ?? '',
     );
@@ -354,6 +357,7 @@ class TransactionResponse extends BaseResponse {
     'isvClientSecret': isvClientSecret,
     'isvMerchantId': isvMerchantId,
     'currency': currency,
+    'aadeTransactionId': aadeTransactionId,
     'fiscalisationSigningDetails': fiscalisationSigningDetails,
   };
 }
